@@ -1,42 +1,33 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-class Login extends CI_Controller {
+<script src="assets/js/login.js"></script>
 
-	private $data;
-	public function __construct()
-	{
-		parent::__construct();
 
-		$this->load->helper('url');
-		$this->load->library('parser');
-		$this->load->library('session');
-		
-		
-		$this->data["base_url"] = base_url();
-	}
+<script>
+    let baseUrl = '{base_url}'
 
-	public function index()
-	{
+    function base_url(url) {
+        if (url == '') {
+            return baseUrl;
+        } else {
+            return baseUrl + url;
+        }
+    }
+</script>
 
-		$this->data["a"] = 'a';
-		$this->data["b"] = 'b';
-		$this->data["c"] = 'c';
-		$this->data["d"] = 'd';
-		$this->data["e"] = 'e';
-		$this->parser->parse('login', $this->data);
-	}
-
-	public function checkLogin() {
-		
-		$data = $this->input->get(NULL);
-		$this->load->model('Login_model', 'Login');
-
-		$result = $this->Login->checkLoginDb($data);
-
-		if ($result['result'] == true) {
-			$this->session->set_userdata('name', 'admin');
-		}
-		echo json_encode($result);
-	}
-}
+<div class="container">
+    
+    <form action="" id="formLogin">
+    <div class="mb-3">
+        <label for="" class="form-label">Username</label>
+        <input type="text" name="username" class="form-control" id="">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Password</label>
+        <input type="text" name="password" class="form-control" id="">
+    </div>
+    </form>
+    
+    <button id="btnLogin" class="btn btn-primary">Login</button>
+</div>
