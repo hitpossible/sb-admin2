@@ -20,6 +20,8 @@
     <!-- Custom styles for this template-->
     <link href="{base_url}assets/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
 </head>
 
 <body id="page-top">
@@ -100,11 +102,12 @@
     <script src="{base_url}assets/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="{base_url}assets/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="{base_url}assets/js/demo/chart-area-demo.js"></script>
-    <script src="{base_url}assets/js/demo/chart-pie-demo.js"></script>
+
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+    {another_js}
 
 </body>
 
