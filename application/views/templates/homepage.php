@@ -91,6 +91,16 @@
         </div>
     </div>
 
+    <script>
+        // const base_url = (url) => {
+        //     return '{base_url}' + url;
+        // }
+
+        function base_url(url) {
+            return '<?php echo $base_url;?>' + url;
+        }
+    </script>
+
     <!-- Bootstrap core JavaScript-->
     <script src="{base_url}assets/vendor/jquery/jquery.min.js"></script>
     <script src="{base_url}assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

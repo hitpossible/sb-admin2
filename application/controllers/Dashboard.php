@@ -55,4 +55,9 @@ class Dashboard extends CI_Controller {
         $this->render_view('showTable');
     }
 
+    public function getProductAll() {
+        $result = $this->Dashboard->getProductAll();
+        echo json_encode($result);
+    }
+
 }
